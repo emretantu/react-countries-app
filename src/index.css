@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@100;200;300;400;500;600;700&display=swap');
 
 :root {
 
@@ -34,6 +34,16 @@
   --clr-neutral-black-300: 0, 0%, 40%;
   --clr-neutral-black-200: 0, 0%, 50%;
   --clr-neutral-black-100: 0, 0%, 70%;
+
+  --ff-base: 'Anuphan', sans-serif;
+
+  --fw-700: 700;
+  --fw-600: 600;
+  --fw-500: 500;
+  --fw-400: 400;
+  --fw-300: 300;
+  --fw-200: 200;
+  --fw-100: 100;
 
 }
 
