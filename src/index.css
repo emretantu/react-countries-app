@@ -1,3 +1,42 @@
+
+
+:root {
+
+  --clr-accent1-900: 40, 100%, 50%;
+  --clr-accent1-800: 40, 100%, 60%;
+  --clr-accent1-700: 40, 100%, 66%;
+  --clr-accent1-500: 40, 100%, 68%;
+  --clr-accent1-600: 40, 100%, 72%;
+  --clr-accent1-400: 40, 100%, 76%;
+  --clr-accent1-300: 40, 100%, 80%;
+  --clr-accent1-200: 40, 100%, 84%;
+  --clr-accent1-100: 40, 100%, 88%;
+
+  --clr-bg1-900: 25, 100%, 95%;
+  --clr-bg1-700: 30, 100%, 95%;
+  --clr-bg1-400: 35, 100%, 95%;
+  --clr-bg1-200: 40, 100%, 95%;
+  --clr-bg1-100: 45, 100%, 95%;
+
+  --clr-neutral-white-900: 0, 0%, 100%;
+  --clr-neutral-white-800: 0, 0%, 99%;
+  --clr-neutral-white-700: 0, 0%, 98%;
+  --clr-neutral-white-400: 0, 0%, 95%;
+  --clr-neutral-white-200: 0, 0%, 92%;
+  --clr-neutral-white-100: 0, 0%, 90%;
+
+  --clr-neutral-black-900: 0, 0%, 0%;
+  --clr-neutral-black-800: 0, 0%, 5%;
+  --clr-neutral-black-700: 0, 0%, 10%;
+  --clr-neutral-black-600: 0, 0%, 15%;
+  --clr-neutral-black-500: 0, 0%, 20%;
+  --clr-neutral-black-400: 0, 0%, 30%;
+  --clr-neutral-black-300: 0, 0%, 40%;
+  --clr-neutral-black-200: 0, 0%, 50%;
+  --clr-neutral-black-100: 0, 0%, 70%;
+
+}
+
 /*CSS Reset*/
 *, *::before, *::after {
   box-sizing: border-box;
