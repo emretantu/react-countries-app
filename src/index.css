@@ -13,10 +13,10 @@
   --clr-accent1-100: 40, 100%, 88%;
 
   --clr-bg1-900: 25, 100%, 95%;
-  --clr-bg1-700: 30, 100%, 95%;
-  --clr-bg1-400: 35, 100%, 95%;
-  --clr-bg1-200: 40, 100%, 95%;
-  --clr-bg1-100: 45, 100%, 95%;
+  --clr-bg1-700: 30, 100%, 96%;
+  --clr-bg1-400: 35, 100%, 97%;
+  --clr-bg1-200: 40, 100%, 98%;
+  --clr-bg1-100: 45, 100%, 99%;
 
   --clr-neutral-white-900: 0, 0%, 100%;
   --clr-neutral-white-800: 0, 0%, 99%;
@@ -63,6 +63,7 @@ html, body {
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  font-family: var(--ff-base);
 }
 
 img, picture, video, canvas, svg {

@@ -1,0 +1,35 @@
+#root {
+  display: grid;
+  grid-template-columns: [page-start] 1fr [main-start] 95vw [main-end] 1fr [page-end];
+  grid-template-rows: [page-start] 100vh [page-end];
+  background-color: hsl(var(--clr-bg1-900));
+}
+
+.main {
+  --child-padding: 0.6rem 1rem;
+
+  grid-column: main-start / main-end;
+  grid-row: page-start / page-end;
+
+  display: grid;
+
+  /*  */
+  grid-template-columns: 3fr 6fr;
+  grid-template-areas: "aside content";
+
+  background-color: hsl(var(--clr-bg1-200));
+}
+
+.aside {
+  background-color: #aaa;
+  grid-area: aside;
+
+  padding: var(--child-padding);
+}
+
+.content {
+  background-color: #999;
+  grid-area: content;
+
+  padding: var(--child-padding);
+}
