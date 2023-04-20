@@ -1,21 +1,20 @@
-
 import './App.css';
+import Aside from './components/Aside/Aside';
+import Content from './components/Content/Content';
 
 function App() {
   return (
     <main className='main'>
       <aside className='aside'>
-        Aside
+        <Aside />
         {/* Mini navbar */}
         {/* Search / filter */}
         {/* Country cards */}
       </aside>
       <section className='content'>
-        Content
-        <header className='content__title'>
-          {/* Bg-img */}
-          {/* Title */}
-        </header>
+        <Content />
+        {/* Bg-img */}
+        {/* Title */}
         {/* Content ... */}
       </section>
     </main>
