@@ -17,11 +17,10 @@
   grid-template-columns: 3fr 6fr;
   grid-template-areas: "aside content";
 
-  background-color: hsl(var(--clr-bg1-200));
 }
 
 .aside {
-  background-color: #aaa;
+  background-color: hsl(var(--clr-bg1-200));
   grid-area: aside;
 
   padding: var(--child-padding);
