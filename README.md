@@ -10,11 +10,12 @@ I plan to use the REST Countries web API as a source of information.
 You can check out this API from this [link](https://restcountries.com/).
 
 ## To-do
-- [ ] Fetching data from the API.
+- [x] Fetching data from the API.
 - [ ] Listing countries on cards in the sidebar.
 - [ ] Searching / filtering.
 - [ ] Country detail information page.
 - [ ] Interactive SVG map.
+- [ ] Inderactive and detailed searching / filtering.
 
 ## Issues
 When the items on the to-do list are completed, details about the issues will be provided.
