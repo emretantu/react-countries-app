@@ -1,0 +1,44 @@
+.bold {
+  font-weight: var(--fw-600);
+}
+
+.card {
+  width: 100%;
+  max-width: 30em;
+  padding: 1em;
+  border: 0.1em solid black;
+  border-radius: 0.5em;
+  display: grid;
+  grid-template-columns: 36fr 64fr;
+  grid-template-areas: "img header";
+  align-items: center;
+  column-gap: 1.2em;
+  overflow: hidden;
+}
+
+.card__img {
+  grid-area: img;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card__header {
+  grid-area: header;
+  display: grid;
+  grid-template-rows: min-content;
+  row-gap: 0.1em;
+}
+
+.card__name {
+  font-weight: var(--fw-700);
+  font-size: 1.2em;
+}
+
+/* .card__capital {
+  
+}
+
+.card__region {
+
+} */

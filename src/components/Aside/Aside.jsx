@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import CountryCard from "./CountryCard";
 
 const Aside = () => {
 
@@ -36,7 +37,7 @@ const Aside = () => {
       {
         data.length === 0
           ? <h1>Loading...</h1>
-          : data.map((data, index) => <p style={{margin: "16px"}} key={index}>{ `${index+1} - ${data.searchStr}` }</p>)
+          : data.map((curData, index) => <CountryCard key={index} flagUrl={curData.flags.png} name={curData.name.official} commonName={curData.name.common} cca2={curData.cca2} cca3={curData.cca3} capital={curData.capital} region={curData.region} />)
       }
     </>
   );
