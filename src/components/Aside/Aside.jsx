@@ -96,7 +96,7 @@ const Aside = () => {
       }, 0);
       return {...curData, rank};
     })
-    console.log(newData);
+    setData(getSortedData(newData, {ascendingOrder: false, prop: ["rank"]}));
   }
 
   return (
