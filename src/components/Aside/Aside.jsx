@@ -63,11 +63,13 @@ const Aside = () => {
     });
   }
 
- 
+  const handleSearch = (queryTermStr) => {
+    console.log(queryTermStr);
+  }
 
   return (
     <>
-      <Search />
+      <Search onSearch={handleSearch} />
       {
         data.length === 0
           ? <h1>Loading...</h1>

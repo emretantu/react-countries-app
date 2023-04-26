@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Search = () => {
+const Search = ({ onSearch }) => {
 
   const [query, setQuery] = useState("");
 
@@ -10,6 +10,7 @@ const Search = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    onSearch(query);
   }
   
   return (
