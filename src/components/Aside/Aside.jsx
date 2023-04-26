@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import CountryCard from "./CountryCard";
+import Search from "./Search";
 
 const Aside = () => {
 
@@ -58,13 +59,15 @@ const Aside = () => {
         }
         return 0;
       });
-      console.log(newData)
       return newData;
     });
   }
 
+ 
+
   return (
     <>
+      <Search />
       {
         data.length === 0
           ? <h1>Loading...</h1>
