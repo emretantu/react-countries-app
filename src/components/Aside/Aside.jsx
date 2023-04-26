@@ -11,8 +11,8 @@ const Aside = () => {
       .then(res => {
         setData(
           res.map((currData) =>  {
-            const searchTerm =  currData.name.common + " "
-            + currData.name.official + " "
+            const searchTerm =  currData.name.common + " " + currData.name.common + " "
+            + currData.name.official + " " +currData.name.official + " "
             + currData.cca2 + " "
             + currData.cca3 + " "
             + currData.region + " "
@@ -25,7 +25,7 @@ const Aside = () => {
             + (currData.languages !== undefined ? Object.keys(currData.languages).reduce((acc, cur) => acc + cur + " ", "") : "")
             + (currData.languages !== undefined ? Object.values(currData.languages).reduce((acc, cur) => acc + cur + " ", "") : "")
             + (currData.timezones !== undefined ? currData.timezones.reduce((acc, cur) => acc + cur + " ", "") : "");
-            return {...currData, searchStr: searchTerm};
+            return {...currData, searchTerm: searchTerm.toLowerCase()};
           })
         )
       })
