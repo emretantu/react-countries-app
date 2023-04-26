@@ -12,8 +12,9 @@ You can check out this API from this [link](https://restcountries.com/).
 ## To-do
 - [x] Fetching data from the API.
 - [x] Listing countries on cards in the sidebar.
-- [ ] Searching
+- [x] Searching
 - [ ] Filtering (sorting, by regions, etc.)
+- [ ] Aside and its components styling
 - [ ] Country detail information page.
 - [ ] Interactive SVG map.
 - [ ] Footer
