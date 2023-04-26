@@ -91,7 +91,6 @@ const Aside = () => {
       const searchTerm = curData.searchTerm;
       const rank = queryTerms.reduce((acc, queryTerm) => {
         const count = termCounter(searchTerm, queryTerm.term);
-        console.log("count: ", count);
         return acc + count * queryTerm.baseScore;
       }, 0);
       return {...curData, rank};
