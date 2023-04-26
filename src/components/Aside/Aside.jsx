@@ -70,7 +70,7 @@ const Aside = () => {
 
   const handleSearch = (queryTermStr) => {
     // generating query terms from query string and their base scores
-    const queryTermWords = queryTermStr.trim().split(" ");
+    const queryTermWords = queryTermStr.trim().toLowerCase().split(" ");
     const queryTerms = queryTermWords.map(word => ({term: word, baseScore: 1}));
     for (let i = 1; i < queryTermWords.length; i++) {
       for (let j = 0; j + i < queryTermWords.length; j++) {
@@ -78,7 +78,7 @@ const Aside = () => {
         for (let k = j; k < i + j + 1; k++) {
           term = term + " " + queryTermWords[k];
         }
-        queryTerms.push({term: term.trim(), baseScore: i+1});
+        queryTerms.push({term: term.trim(), baseScore: (i+1)**2});
       }
     }
     // term counter function
