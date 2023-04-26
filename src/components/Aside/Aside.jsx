@@ -30,7 +30,38 @@ const Aside = () => {
         )
       })
       .catch(console.error("Fetching or setting data error!"));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+    const handleSortData = ({ ascendingOrder, prop }) => {
+    prop = prop || ["rank"];
+    setData(() => {
+      const newData = [...data];
+      newData.sort((a, b) => {
+        let propA = a;
+        let propB = b;
+        for (const el of prop) {
+          propA = propA[el];
+          propB = propB[el];
+        }
+        if (propA < propB) {
+          if (ascendingOrder) {
+            return -1;
+          }
+          return 1;
+        }
+        if (propA > propB) {
+          if (ascendingOrder) {
+            return 1;
+          }
+          return -1;
+        }
+        return 0;
+      });
+      console.log(newData)
+      return newData;
+    });
+  }
 
   return (
     <>
