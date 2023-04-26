@@ -64,7 +64,18 @@ const Aside = () => {
   }
 
   const handleSearch = (queryTermStr) => {
-    console.log(queryTermStr);
+    const queryTermWords = queryTermStr.trim().split(" ");
+    const queryTerms = queryTermWords.map(word => ({term: word, baseScore: 1}));
+    for (let i = 1; i < queryTermWords.length; i++) {
+      for (let j = 0; j + i < queryTermWords.length; j++) {
+        let term = "";
+        for (let k = j; k < i + j + 1; k++) {
+          term = term + " " + queryTermWords[k];
+        }
+        queryTerms.push({term: term.trim(), baseScore: i+1});
+      }
+    }
+    console.log(queryTerms);
   }
 
   return (
