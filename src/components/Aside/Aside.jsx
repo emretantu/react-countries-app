@@ -34,9 +34,8 @@ const Aside = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-    const handleSortData = ({ ascendingOrder, prop }) => {
-    prop = prop || ["rank"];
-    setData(() => {
+    const getSortedData = (data, { ascendingOrder, prop }) => {
+      if(!prop || !data) return; 
       const newData = [...data];
       newData.sort((a, b) => {
         let propA = a;
@@ -60,6 +59,12 @@ const Aside = () => {
         return 0;
       });
       return newData;
+    }
+
+    const handleSortData = ({ ascendingOrder, prop }) => {
+    if(!prop) return;
+    setData(() => {
+      getSortedData(data, {ascendingOrder, prop});
     });
   }
 
