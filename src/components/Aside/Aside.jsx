@@ -80,6 +80,18 @@ const Aside = () => {
     const termCounter = (mainStr, subStr) => {
       return mainStr.split(subStr).length - 1;
     }
+    // ranking
+    let newData = [...data];
+    newData =  newData.map((curData) => {
+      const searchTerm = curData.searchTerm;
+      const rank = queryTerms.reduce((acc, queryTerm) => {
+        const count = termCounter(searchTerm, queryTerm.term);
+        console.log("count: ", count);
+        return acc + count * queryTerm.baseScore;
+      }, 0);
+      return {...curData, rank};
+    })
+    console.log(newData);
   }
 
   return (
