@@ -105,7 +105,18 @@ const Aside = () => {
       {
         data.length === 0
           ? <h1>Loading...</h1>
-          : data.map((curData, index) => <CountryCard key={index} flagUrl={curData.flags.png} name={curData.name.official} commonName={curData.name.common} cca2={curData.cca2} cca3={curData.cca3} capital={curData.capital} region={curData.region} />)
+          : data.map((curData, index) => (
+            <CountryCard
+              key={index}
+              flagUrl={curData.flags.png}
+              name={curData.name.official}
+              commonName={curData.name.common}
+              cca2={curData.cca2}
+              cca3={curData.cca3}
+              capital={curData.capital}
+              region={curData.region}
+              rank={curData.rank} />
+          ))
       }
     </>
   );
