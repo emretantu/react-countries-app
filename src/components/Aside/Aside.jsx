@@ -60,13 +60,13 @@ const Aside = () => {
       });
       return newData;
     }
-
-    const handleSortData = ({ ascendingOrder, prop }) => {
-    if(!prop) return;
-    setData(() => {
-      getSortedData(data, {ascendingOrder, prop});
-    });
-  }
+    
+    /* const handleSortData = ({ ascendingOrder, prop }) => {
+      if(!prop) return;
+      setData(() => {
+        getSortedData(data, {ascendingOrder, prop});
+      });    
+    } */
 
   const handleSearch = (queryTermStr) => {
     // generating query terms from query string and their base scores
