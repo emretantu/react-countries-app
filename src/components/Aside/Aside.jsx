@@ -26,7 +26,7 @@ const Aside = () => {
             + (currData.languages !== undefined ? Object.keys(currData.languages).reduce((acc, cur) => acc + cur + " ", "") : "")
             + (currData.languages !== undefined ? Object.values(currData.languages).reduce((acc, cur) => acc + cur + " ", "") : "")
             + (currData.timezones !== undefined ? currData.timezones.reduce((acc, cur) => acc + cur + " ", "") : "");
-            return {...currData, searchTerm: searchTerm.toLowerCase()};
+            return {...currData, searchTerm: searchTerm.toLowerCase(), rank: 1};
           })
         )
       })
@@ -70,7 +70,7 @@ const Aside = () => {
 
   const handleSearch = (queryTermStr) => {
     // generating query terms from query string and their base scores
-    const queryTermWords = queryTermStr.trim().split(" ");
+    const queryTermWords = queryTermStr.trim().toLowerCase().split(" ");
     const queryTerms = queryTermWords.map(word => ({term: word, baseScore: 1}));
     for (let i = 1; i < queryTermWords.length; i++) {
       for (let j = 0; j + i < queryTermWords.length; j++) {
@@ -78,7 +78,7 @@ const Aside = () => {
         for (let k = j; k < i + j + 1; k++) {
           term = term + " " + queryTermWords[k];
         }
-        queryTerms.push({term: term.trim(), baseScore: i+1});
+        queryTerms.push({term: term.trim(), baseScore: (i+1)**2});
       }
     }
     // term counter function
@@ -91,7 +91,6 @@ const Aside = () => {
       const searchTerm = curData.searchTerm;
       const rank = queryTerms.reduce((acc, queryTerm) => {
         const count = termCounter(searchTerm, queryTerm.term);
-        console.log("count: ", count);
         return acc + count * queryTerm.baseScore;
       }, 0);
       return {...curData, rank};
@@ -105,18 +104,20 @@ const Aside = () => {
       {
         data.length === 0
           ? <h1>Loading...</h1>
-          : data.map((curData, index) => (
-            <CountryCard
-              key={index}
-              flagUrl={curData.flags.png}
-              name={curData.name.official}
-              commonName={curData.name.common}
-              cca2={curData.cca2}
-              cca3={curData.cca3}
-              capital={curData.capital}
-              region={curData.region}
-              rank={curData.rank} />
-          ))
+          : data
+              .filter((curData) => curData.rank)
+              .map((curData, index) => (
+                <CountryCard
+                key={index}
+                flagUrl={curData.flags.png}
+                name={curData.name.official}
+                commonName={curData.name.common}
+                cca2={curData.cca2}
+                cca3={curData.cca3}
+                capital={curData.capital}
+                region={curData.region}
+                rank={curData.rank} />
+              ))
       }
     </>
   );
